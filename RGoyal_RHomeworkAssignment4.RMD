@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #           distType = specifies distribution type 
 # Outputs:  xbar = norm distribution sample mean
 #           sdSample = norm distribution sample standard deviation
-#           bootmean = vector of bootstrap sample means
+#           bootnorm = vector of bootstrap sample means
 #           print - prints random sample summary statistics
 #           plots - plots histogram of sample data
 # Descrip: Receives number and type of samples to be generated and number of bootstrap samples to
@@ -50,17 +50,17 @@ bootMeanFunction <- function(n, nSimulations, distType) {
     cat("Random Normal sample summary statistics:\n")
     print(summary(sample))
     
-# Initializes bootmean vector as numeric type of size 'nSimulations'
-    bootmean <- numeric(nSimulations)
+# Initializes bootnorm vector as numeric type of size 'nSimulations'
+    bootnorm <- numeric(nSimulations)
     
-# Run bootstrap sequence and save bootsample means to bootmean vector
+# Run bootstrap sequence and save temp means to bootnorm vector
     for (i in 1:nSimulations){
-        bootsample <- sample(sample, size = length(sample), replace = TRUE)
-        bootmean[i] <- mean(bootsample)
+        temp <- sample(sample, size = length(sample), replace = TRUE)
+        bootnorm[i] <- mean(temp)
     }
     
-# Return sample mean, standard deviation, and vector of bootsrap means here using c vector
-    return(c(xbar,sdSample,bootmean))
+# Return sample mean, standard deviation, and vector of bootstrap means here using c vector
+    return(c(xbar,sdSample,bootnorm))
 }
 ```
 
@@ -87,28 +87,28 @@ analyze <- function(N, repeats, DistType) {
     funcReturn <- bootMeanFunction(N, repeats, DistType)
     sampleMean <- funcReturn[1]
     sampleSD <- funcReturn[2]
-    BOOTMean <- funcReturn[-1:-2]
+    BootNorm <- funcReturn[-1:-2]
     
 # Prints bootstrap mean summary results here
     cat("Bootstrap sample's summary statistics:\n")
-    print(summary(BOOTMean))
+    print(summary(BootNorm))
     
 # Run conditional statement to print correct histogram here
     if(DistType == distNorm) {
-        hist(BOOTMean, main = paste("Bootstrapped RNORM Sample Size of", N),
+        hist(BootNorm, main = paste("Bootstrapped RNORM Sample Size of", N),
              xlab = "Bootstrap sample", col = "yellow")
     }
     else if(DistType == distExp) {
-        hist(BOOTMean, main = paste("Bootstrapped REXP Sample Size of", N),
+        hist(BootNorm, main = paste("Bootstrapped REXP Sample Size of", N),
              xlab = "Bootstrap sample", col = "yellow")
     }
 # Add sample mean and bootstrap mean of means lines for comparison in bootstrap histogram
     abline(v = sampleMean, col = "blue", lwd = 2)
-    abline(v = mean(BOOTMean), col = "green", lwd = 2, lty = 3)
+    abline(v = mean(BootNorm), col = "green", lwd = 2, lty = 3)
     
 # Print random sample and bootstrap standard deviations and standard error
     print(paste("Standard Deviation of Random Normal Samples  =",round(sampleSD,4)))
-    print(paste("Standard Deviation of Bootstrap Means =",round(sd(BOOTMean),4)))
+    print(paste("Standard Deviation of Bootstrap Means =",round(sd(BootNorm),4)))
     print(paste("Standard Error of the Sample Mean =",round((sampleSD/sqrt(N)),4)))
 }
 ```
@@ -174,4 +174,4 @@ analyze(sample2, repeats, distExp)
 
 
 ### Review:
-##### As can be seen above, the Central Limit Theorem is clearly displayed when comparing the effects of bootstrapping on randomized sample sizes of 50 and 500. This applies for both random normal and exponentially distributed data. The other interesting thing is that the mean of the original random sample data and the mean of the bootstrapped data are practically equal. We're treating the original data as the population, so when taking many samples from this population and calculating the mean of the samples, the bootstrap sample mean is expected to be closer to the original data.And when we plot the original data and the bootstrapped data on the histogram, we see that the bootstrapped data is more normal than the original population data. And this is true for exponentially distributed samples as well. It's important to note that sample sizes of 500 seem to distribute more normally and compact when bootstrapping than the sample size of 50. Also note that the original sample mean is drawn as a blue line on the bootstrap histograms and bootstrap mean is drawn in dotted green to compare the mean values referenced in the summary statistics.Finally, the random samples and bootstrap samples standard deviations further confirm that standard deviation also improves with the implementation of the Central Limit Theorem. 
+##### As can be seen above, the Central Limit Theorem is clearly displayed when comparing the effects of bootstrapping on randomized sample sizes of 50 and 500. This applies for both random normal and exponentially distributed data. We further find out that the mean of the original random sample data and the mean of the bootstrapped data are practically equal as in Central Limit Theorem.. We're treating the original data as the population, so when taking many samples from this population and calculating the mean of the samples, the bootstrap sample mean is expected to be closer to the original data.And when we plot the original data and the bootstrapped data on the histogram, we see that the bootstrapped data is more normal than the original population data. And this is true for exponentially distributed samples as well. It's important to note that sample sizes of 500 seem to distribute more normally distributed and compact when bootstrapping than the sample size of 50. Also note that the original sample mean is drawn as a blue line on the bootstrap histograms and bootstrap mean is drawn in dotted green to compare the mean values referenced in the summary statistics.Finally, the random samples and bootstrap samples standard deviations further confirm that standard deviation also improves with the implementation of the Central Limit Theorem. 

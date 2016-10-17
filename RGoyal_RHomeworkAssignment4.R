@@ -40,8 +40,8 @@ bootMeanFunction <- function(n, nSimulations, distType) {
   
   # Run bootstrap sequence and save bootsample means to bootmean vector
   for (i in 1:nSimulations){
-    bootsample <- sample(sample, size = length(sample), replace = TRUE)
-    bootmean[i] <- mean(bootsample)
+    temp <- sample(sample, size = length(sample), replace = TRUE)
+    bootmean[i] <- mean(temp)
   }
   
   # Return sample mean, standard deviation, and vector of bootsrap means here using c vector
@@ -71,28 +71,28 @@ analyze <- function(N, repeats, DistType) {
   funcReturn <- bootMeanFunction(N, repeats, DistType)
   sampleMean <- funcReturn[1]
   sampleSD <- funcReturn[2]
-  BOOTMean <- funcReturn[-1:-2]
+  BootNorm <- funcReturn[-1:-2]
   
   # Prints bootstrap mean summary results here
   cat("Bootstrap sample's summary statistics:\n")
-  print(summary(BOOTMean))
+  print(summary(BootNorm))
   
   # Run conditional statement to print correct histogram here
   if(DistType == distNorm) {
-    hist(BOOTMean, main = paste("Bootstrapped RNORM Sample Size of", N),
+    hist(BootNorm, main = paste("Bootstrapped RNORM Sample Size of", N),
          xlab = "Bootstrap sample", col = "yellow")
   }
   else if(DistType == distExp) {
-    hist(BOOTMean, main = paste("Bootstrapped REXP Sample Size of", N),
+    hist(BootNorm, main = paste("Bootstrapped REXP Sample Size of", N),
          xlab = "Bootstrap sample", col = "yellow")
   }
   # Add sample mean and bootstrap mean of means lines for comparison in bootstrap histogram
   abline(v = sampleMean, col = "blue", lwd = 2)
-  abline(v = mean(BOOTMean), col = "green", lwd = 2, lty = 3)
+  abline(v = mean(BootNorm), col = "green", lwd = 2, lty = 3)
   
   # Print random sample and bootstrap standard deviations and standard error
   print(paste("Standard Deviation of Random Normal Samples  =",round(sampleSD,4)))
-  print(paste("Standard Deviation of Bootstrap Means =",round(sd(BOOTMean),4)))
+  print(paste("Standard Deviation of Bootstrap Means =",round(sd(BootNorm),4)))
   print(paste("Standard Error of the Sample Mean =",round((sampleSD/sqrt(N)),4)))
 }
 
