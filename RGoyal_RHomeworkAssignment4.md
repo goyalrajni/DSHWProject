@@ -1,8 +1,7 @@
 # MSDS 6306: Introduction to Data Science (402) Homework-4
 Rajni Goyal  
-October 19, 2016  
+October 22, 2016  
 
-####Assignment - Write bootstrap code to illustrate the central limit theorem in R markdown and push the result to GitHub. Use a normal distribution with two different sample sizes and an exponential distribution with two different sample sizes. 
 
 
 
@@ -107,7 +106,6 @@ analyze <- function(N, repeats, DistType) {
 # Print random sample and bootstrap standard deviations and standard error
     print(paste("Standard Deviation of Random Normal Samples  =",round(sampleSD,4)))
     print(paste("Standard Deviation of Bootstrap Means =",round(sd(BootNorm),4)))
-    print(paste("Standard Error of the Sample Mean =",round((sampleSD/sqrt(N)),4)))
 }
 ```
 
@@ -140,18 +138,17 @@ analyze(sample1, repeats, distNorm)
 ```
 ## Random Normal sample summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   41.55   47.41   49.97   49.85   52.17   58.90 
+##   39.86   47.42   50.54   50.44   52.68   62.75 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   48.28   49.47   49.82   49.83   50.18   52.02
+##   48.08   50.01   50.43   50.42   50.84   52.53
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 3.791"
-## [1] "Standard Deviation of Bootstrap Means = 0.5262"
-## [1] "Standard Error of the Sample Mean = 0.5361"
+## [1] "Standard Deviation of Random Normal Samples  = 4.4544"
+## [1] "Standard Deviation of Bootstrap Means = 0.6097"
 ```
 
 <br>
@@ -169,18 +166,17 @@ analyze(sample2, repeats, distNorm)
 ```
 ## Random Normal sample summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   37.83   47.30   50.43   50.18   52.96   62.66 
+##   39.30   46.62   50.00   49.99   52.81   62.36 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   49.43   50.06   50.18   50.18   50.31   50.78
+##   49.37   49.86   49.98   49.98   50.11   50.64
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 3.9698"
-## [1] "Standard Deviation of Bootstrap Means = 0.1798"
-## [1] "Standard Error of the Sample Mean = 0.1775"
+## [1] "Standard Deviation of Random Normal Samples  = 4.2053"
+## [1] "Standard Deviation of Bootstrap Means = 0.1856"
 ```
 
 <br>
@@ -198,18 +194,17 @@ analyze(sample1, repeats, distExp)
 ```
 ## Random Normal sample summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## 0.04376 0.32070 0.77190 1.03500 1.29700 5.46000 
+## 0.01424 0.34430 0.68320 1.05900 1.50200 4.00900 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  0.6156  0.9402  1.0330  1.0380  1.1280  1.5660
+##  0.6326  0.9601  1.0590  1.0610  1.1590  1.5760
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 1.0136"
-## [1] "Standard Deviation of Bootstrap Means = 0.1402"
-## [1] "Standard Error of the Sample Mean = 0.1433"
+## [1] "Standard Deviation of Random Normal Samples  = 1.0286"
+## [1] "Standard Deviation of Bootstrap Means = 0.1445"
 ```
 
 <br>
@@ -227,18 +222,17 @@ analyze(sample2, repeats, distExp)
 ```
 ## Random Normal sample summary statistics:
 ##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## 0.001248 0.284200 0.708700 1.015000 1.345000 6.388000 
+## 0.000357 0.256800 0.681300 0.958600 1.460000 4.835000 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  0.8628  0.9819  1.0140  1.0140  1.0450  1.1990
+##  0.8257  0.9309  0.9581  0.9581  0.9840  1.0710
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 1.0316"
-## [1] "Standard Deviation of Bootstrap Means = 0.0469"
-## [1] "Standard Error of the Sample Mean = 0.0461"
+## [1] "Standard Deviation of Random Normal Samples  = 0.896"
+## [1] "Standard Deviation of Bootstrap Means = 0.0387"
 ```
 
 <br>

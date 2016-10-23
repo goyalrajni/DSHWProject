@@ -1,13 +1,12 @@
 ---
 title: "MSDS 6306: Introduction to Data Science (402) Homework-4"
 author: "Rajni Goyal"
-date: "October 19, 2016"
+date: "October 22, 2016"
 output: 
     html_document:
       keep_md: true
 ---
 
-####Assignment - Write bootstrap code to illustrate the central limit theorem in R markdown and push the result to GitHub. Use a normal distribution with two different sample sizes and an exponential distribution with two different sample sizes. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -113,7 +112,6 @@ analyze <- function(N, repeats, DistType) {
 # Print random sample and bootstrap standard deviations and standard error
     print(paste("Standard Deviation of Random Normal Samples  =",round(sampleSD,4)))
     print(paste("Standard Deviation of Bootstrap Means =",round(sd(BootNorm),4)))
-    print(paste("Standard Error of the Sample Mean =",round((sampleSD/sqrt(N)),4)))
 }
 ```
 
