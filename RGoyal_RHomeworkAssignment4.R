@@ -61,8 +61,7 @@ bootMeanFunction <- function(n, nSimulations, distType) {
 #
 # Descrip: Receives number and type of samples to be generated and number of bootstrap samples to be
 #          collected, and passes these values to the bootMeanFunction() function.Processes bootMeanFunction()
-#          returned values and produces bootstrap mean summary statistics, and standard error of
-#          the sample mean. Additionally, bootstrap mean histograms are plotted for comparison to sample
+#          returned values and produces bootstrap mean summary statistics. Additionally, bootstrap mean histograms are plotted for comparison to sample
 #          histograms and random sample's and bootstrap sample's standard deviations are displayed.
 
 analyze <- function(N, repeats, DistType) {

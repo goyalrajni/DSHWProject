@@ -7,7 +7,7 @@ October 22, 2016
 
 
 ### Functions Used:
-####Two functions were used to illustrate the Central Limit Theorem for normal distribution and exponential distribution.BootMeanFunction is used to receive number and type of samples to be generated and number of bootstrap samples to be collected, produces bootstrap samples, and returns the sample mean, sample standard deviation, and bootstrap sample means. And Analyze function is used to process bootMeanFunction() returned values and produces bootstrap mean summary statistics, and standard error of the sample mean. Additionally, bootstrap mean histograms are plotted for comparison to sample histograms and random sample's and bootstrap sample's standard deviations are displayed.
+####Two functions were used to illustrate the Central Limit Theorem for normal distribution and exponential distribution.BootMeanFunction is used to receive number and type of samples to be generated and number of bootstrap samples to be collected, produces bootstrap samples, and returns the sample mean, sample standard deviation, and bootstrap sample means. And Analyze function is used to process bootMeanFunction() returned values and produces bootstrap mean summary statistics. Additionally, bootstrap mean histograms are plotted for comparison to sample histograms and random sample's and bootstrap sample's standard deviations are displayed.
 
 
 ```r
@@ -74,8 +74,7 @@ bootMeanFunction <- function(n, nSimulations, distType) {
 #
 # Descrip: Receives number and type of samples to be generated and number of bootstrap samples to be
 #          collected, and passes these values to the bootMeanFunction() function.Processes bootMeanFunction()
-#          returned values and produces bootstrap mean summary statistics, and standard error of
-#          the sample mean. Additionally, bootstrap mean histograms are plotted for comparison to sample
+#          returned values and produces bootstrap mean summary statistics. Additionally, bootstrap mean histograms are #          plotted for comparison to sample
 #          histograms and random sample's and bootstrap sample's standard deviations are displayed.
 
 analyze <- function(N, repeats, DistType) {
@@ -138,17 +137,17 @@ analyze(sample1, repeats, distNorm)
 ```
 ## Random Normal sample summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   39.86   47.42   50.54   50.44   52.68   62.75 
+##   43.00   46.94   49.80   50.01   52.82   58.99 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   48.08   50.01   50.43   50.42   50.84   52.53
+##   48.16   49.65   50.03   50.02   50.41   52.04
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 4.4544"
-## [1] "Standard Deviation of Bootstrap Means = 0.6097"
+## [1] "Standard Deviation of Random Normal Samples  = 4.0943"
+## [1] "Standard Deviation of Bootstrap Means = 0.5707"
 ```
 
 <br>
@@ -166,17 +165,17 @@ analyze(sample2, repeats, distNorm)
 ```
 ## Random Normal sample summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   39.30   46.62   50.00   49.99   52.81   62.36 
+##   35.73   47.50   50.22   49.95   52.64   62.77 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   49.37   49.86   49.98   49.98   50.11   50.64
+##   49.41   49.83   49.95   49.95   50.07   50.50
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 4.2053"
-## [1] "Standard Deviation of Bootstrap Means = 0.1856"
+## [1] "Standard Deviation of Random Normal Samples  = 3.9162"
+## [1] "Standard Deviation of Bootstrap Means = 0.1736"
 ```
 
 <br>
@@ -193,18 +192,18 @@ analyze(sample1, repeats, distExp)
 
 ```
 ## Random Normal sample summary statistics:
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## 0.01424 0.34430 0.68320 1.05900 1.50200 4.00900 
+##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+## 0.006402 0.268700 0.460400 0.772600 1.094000 3.678000 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  0.6326  0.9601  1.0590  1.0610  1.1590  1.5760
+##  0.4565  0.6931  0.7590  0.7656  0.8344  1.1770
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 1.0286"
-## [1] "Standard Deviation of Bootstrap Means = 0.1445"
+## [1] "Standard Deviation of Random Normal Samples  = 0.78"
+## [1] "Standard Deviation of Bootstrap Means = 0.1095"
 ```
 
 <br>
@@ -222,17 +221,17 @@ analyze(sample2, repeats, distExp)
 ```
 ## Random Normal sample summary statistics:
 ##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## 0.000357 0.256800 0.681300 0.958600 1.460000 4.835000 
+## 0.007077 0.265400 0.668300 1.008000 1.405000 5.451000 
 ## Bootstrap sample's summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  0.8257  0.9309  0.9581  0.9581  0.9840  1.0710
+##  0.8508  0.9769  1.0080  1.0080  1.0370  1.1650
 ```
 
 ![](RGoyal_RHomeworkAssignment4_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 ```
-## [1] "Standard Deviation of Random Normal Samples  = 0.896"
-## [1] "Standard Deviation of Bootstrap Means = 0.0387"
+## [1] "Standard Deviation of Random Normal Samples  = 1.0087"
+## [1] "Standard Deviation of Bootstrap Means = 0.0448"
 ```
 
 <br>
