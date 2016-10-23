@@ -1,6 +1,6 @@
 # MSDS 6306: Introduction to Data Science (402) Homework-4
-## Author: "Rajni Goyal"
-## Date: "October 22, 2016"
+### Author: "Rajni Goyal"
+### Date: "October 22, 2016"
 
 # Overview
 ####Two functions were used to illustrate the Central Limit Theorem for normal distribution and exponential distribution.
@@ -12,14 +12,14 @@ standard deviations are displayed.
 
 # Project Structure
 
-#### Function: bootMeanFunction()
-#### Function: analyze()
-#### Bootstrapping Setup
-#### Normal Distribution Outputs - Sample Size of 50
-#### Normal Distribution Outputs - Sample Size of 500
-#### Exponential Distribution Outputs - Sample Size of 50
-#### Exponential Distribution Outputs - Sample Size of 500
-#### Review
+####Function: bootMeanFunction()
+####Function: analyze()
+####Bootstrapping Setup
+####Normal Distribution Outputs - Sample Size of 50
+####Normal Distribution Outputs - Sample Size of 500
+####Exponential Distribution Outputs - Sample Size of 50
+####Exponential Distribution Outputs - Sample Size of 500
+####Review
 
-## Note: Plots are in figute-html folder
+### Note: Plots are in figute-html folder
 
