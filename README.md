@@ -14,12 +14,12 @@ standard deviations are displayed.
 
 #####Function: bootMeanFunction()
 #####Function: analyze()
-####Bootstrapping Setup
-####Normal Distribution Outputs - Sample Size of 50
-####Normal Distribution Outputs - Sample Size of 500
-####Exponential Distribution Outputs - Sample Size of 50
-####Exponential Distribution Outputs - Sample Size of 500
-####Review
+#####Bootstrapping Setup
+#####Normal Distribution Outputs - Sample Size of 50
+#####Normal Distribution Outputs - Sample Size of 500
+#####Exponential Distribution Outputs - Sample Size of 50
+#####Exponential Distribution Outputs - Sample Size of 500
+#####Review
 
 ### Note: Plots are in figute-html folder
 
