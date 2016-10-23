@@ -1,4 +1,4 @@
-### MSDS 6306: Introduction to Data Science (402) Homework-4
+##### MSDS 6306: Introduction to Data Science (402) Homework-4
 ### Author: "Rajni Goyal"
 ### Date: "October 22, 2016"
 
@@ -12,8 +12,8 @@ standard deviations are displayed.
 
 # Project Structure
 
-####Function: bootMeanFunction()
-####Function: analyze()
+######Function: bootMeanFunction()
+######Function: analyze()
 ####Bootstrapping Setup
 ####Normal Distribution Outputs - Sample Size of 50
 ####Normal Distribution Outputs - Sample Size of 500
