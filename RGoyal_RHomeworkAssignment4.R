@@ -93,7 +93,6 @@ analyze <- function(N, repeats, DistType) {
   # Print random sample and bootstrap standard deviations and standard error
   print(paste("Standard Deviation of Random Normal Samples  =",round(sampleSD,4)))
   print(paste("Standard Deviation of Bootstrap Means =",round(sd(BootNorm),4)))
-  print(paste("Standard Error of the Sample Mean =",round((sampleSD/sqrt(N)),4)))
 }
 
   ### Bootstrapping Setup:
